@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hammerfight — Pepelats</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div class="hud">
+    <div class="gauge gauge-left">
+      <div class="gauge-ring">
+        <div class="gauge-needle" id="player-needle"></div>
+        <span class="gauge-label">PEPELATS</span>
+      </div>
+      <div class="gauge-readout" id="player-hp">1000</div>
+    </div>
+
+    <div class="hud-center">
+      <div class="title">PEPELATS DUEL</div>
+      <div class="hint" id="hint">Движение мыши — тяга | E — выбросить или подобрать оружие</div>
+    </div>
+
+    <div class="gauge gauge-right">
+      <div class="gauge-ring enemy">
+        <div class="gauge-needle" id="enemy-needle"></div>
+        <span class="gauge-label">ВРАГ</span>
+      </div>
+      <div class="gauge-readout" id="enemy-count">1</div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <h1 id="overlay-title">PEPELATS</h1>
+    <p id="overlay-text">Выберите режим игры</p>
+    <div class="lobby-actions" id="lobby-actions">
+      <button type="button" class="lobby-btn" id="btn-training">Тренировка</button>
+      <button type="button" class="lobby-btn" id="btn-local">Локальный бой</button>
+      <button type="button" class="lobby-btn lobby-btn-primary" id="btn-create">Создать дуэль</button>
+    </div>
+    <div class="invite-box hidden" id="invite-box">
+      <p class="invite-label">Ссылка-приглашение для соперника:</p>
+      <div class="invite-row">
+        <input type="text" class="invite-input" id="invite-link" readonly>
+        <button type="button" class="lobby-btn" id="btn-copy">Копировать</button>
+      </div>
+      <p class="invite-wait" id="invite-wait">Ожидание соперника…</p>
+    </div>
+    <p class="overlay-sub hidden" id="overlay-sub"></p>
+  </div>
+
+  <div class="pause-menu hidden" id="pause-menu">
+    <h2 class="pause-title">МЕНЮ</h2>
+    <p class="pause-hint">Esc — закрыть</p>
+    <div class="pause-actions">
+      <button type="button" class="lobby-btn" id="btn-resume">Продолжить</button>
+      <button type="button" class="lobby-btn lobby-btn-primary" id="btn-exit">Выйти из боя</button>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="audio.js"></script>
+  <script src="net.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
